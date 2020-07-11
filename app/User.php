@@ -65,7 +65,7 @@ class User extends Authenticatable implements HasMedia
     }
 
     public function hasRole($role) {
-        return (bool) $this->roles->where('name', $role)->count();
+        return (bool) $this->roles()->where('name', $role)->exists();
     }
 
     public function giveRole($nameRole) {
